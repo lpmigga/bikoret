@@ -1,0 +1,10 @@
+﻿body {
+    /* Margin bottom by footer height */
+    /*margin-bottom: 60px;
+    background-image: url("~/images/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover
+}*/
+    background-image: url("/images/wallpaper.jpg");
+    background-attachment:fixed;
+}
