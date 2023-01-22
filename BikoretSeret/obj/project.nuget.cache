@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PH0aOn0HD7NxmsMEA/L4GL2+SU33W0wG5AHHq+wUiQDOgHoxsQ2uaFlfddIxrC5GnHSEYNWZbTdQqcvXefcfgA==",
+  "dgSpecHash": "gKHg/nSTk0ZWrFeNk8SgQBN2SAvARQ+COFcLA+B2wHwoPZ44gFNR4T32oFs7L0jmIsSe1vEPEeKWX3dXV7HgDg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bt-user\\source\\repos\\BikoretSeret\\BikoretSeret.csproj",
+  "projectFilePath": "C:\\Users\\bt-user\\source\\repos\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bt-user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bt-user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -11,5 +11,8 @@ namespace BikoretSeret.Models
         public DbSet<TbUser> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite(@"Data source=Demo.db");
+        public DbSet<Movie> movies { get; set; }
+
+
     }
 }

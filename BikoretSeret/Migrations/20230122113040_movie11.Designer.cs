@@ -2,14 +2,16 @@
 using BikoretSeret.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikoretSeret.Migrations
 {
     [DbContext(typeof(DbContect))]
-    partial class DbContectModelSnapshot : ModelSnapshot
+    [Migration("20230122113040_movie11")]
+    partial class movie11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,0 +1,33 @@
+﻿@model BikoretSeret.Models.Movie
+<form action="/Movies/addMovie" method="post">
+
+
+
+    <div class="container">
+        <label for="mName"><b>movieName</b></label>
+        <input type="text" placeholder="Enter movie name" asp-for="name" required>
+        <br />
+        <label for="categor"><b>movieCategory</b></label><br />
+
+        <input type="radio" value="action" asp-for="category"><label>Action</label>
+        <br />
+        <input type="radio" value="comedy" asp-for="category"><label>comedy</label>
+        <br>
+        <input type="radio" value="romanti" asp-for="category"><label>romanti</label>
+        <br />
+        <label for="summery"><b>summerys</b></label>
+        <input type="text" placeholder="Enter your summery" asp-for="summery" required>
+        <br />
+        <input type="submit" value="Submit">
+    </div>
+    <div>
+        @if (TempData.ContainsKey("message"))
+        {
+            string name = TempData["message"].ToString();
+            <h1>@name</h1>
+        }
+    </div>
+
+
+
+</form>

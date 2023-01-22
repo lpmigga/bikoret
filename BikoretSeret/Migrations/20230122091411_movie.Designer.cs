@@ -2,14 +2,16 @@
 using BikoretSeret.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BikoretSeret.Migrations
 {
     [DbContext(typeof(DbContect))]
-    partial class DbContectModelSnapshot : ModelSnapshot
+    [Migration("20230122091411_movie")]
+    partial class movie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,11 +23,17 @@ namespace BikoretSeret.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("bikoret")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("category")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("name")
                         .HasColumnType("TEXT");
+
+                    b.Property<double>("rating")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("summery")
                         .HasColumnType("TEXT");
