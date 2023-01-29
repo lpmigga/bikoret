@@ -20,16 +20,28 @@ namespace BikoretSeret.Controllers
             {
                 using (var db = new Models.DbContect())
                 {
-                    TempData["message"] = "your movie has been added";
-                    db.movies.Add(movie);
-                    db.SaveChanges();
-                    
+                    List<Movie> movies = db.movies.Where(n => n.category.Equals(movie.category)&& n.name.Equals(movie.name)).ToList();
+                    if (movies.Count == 0)
+                    {
+                        TempData["message"] = "your movie has been added";
+                        db.movies.Add(movie);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        TempData["message"] = "fail to add your movie";
+                    }
+                    return View();
                 }
             }
             else
             {
                 TempData["message"] = "fail to add your movie";
             }
+            return View();
+        }
+        public IActionResult allMovies ()
+        {
             return View();
         }
     }

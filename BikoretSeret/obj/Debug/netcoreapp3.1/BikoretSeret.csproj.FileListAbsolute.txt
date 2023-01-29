@@ -157,3 +157,4 @@ C:\Users\bt-user\source\repos\bikoret\BikoretSeret\obj\Debug\netcoreapp3.1\Bikor
 C:\Users\bt-user\source\repos\bikoret\BikoretSeret\obj\Debug\netcoreapp3.1\BikoretSeret.pdb
 C:\Users\bt-user\source\repos\bikoret\BikoretSeret\obj\Debug\netcoreapp3.1\BikoretSeret.genruntimeconfig.cache
 C:\Users\bt-user\source\repos\bikoret\BikoretSeret\obj\Debug\netcoreapp3.1\Razor\Views\Movies\addMovie.cshtml.g.cs
+C:\Users\bt-user\source\repos\bikoret\BikoretSeret\obj\Debug\netcoreapp3.1\Razor\Views\Movies\allMovies.cshtml.g.cs
