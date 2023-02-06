@@ -77,7 +77,21 @@ body {
 }
 #back {
     margin-bottom: 60px;
-    background-image: url("~/images/wallpaper.jpg");
+    background-image: url("/images/19.jpg");
     background-repeat: no-repeat;
     background-size: cover
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: lightgray;
 }

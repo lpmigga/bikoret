@@ -42,7 +42,20 @@ namespace BikoretSeret.Controllers
         }
         public IActionResult allMovies ()
         {
+            if(ModelState.IsValid)
+            {
+                using (var db = new Models.DbContect())
+                {
+                    List<Movie> Movies = db.movies.ToList();
+                    ViewBag.listOfMovies = Movies;
+                    return View();
+                }
+                
+            }
             return View();
+            //לפנות לדטא בייס, להביא את כל הסרטים כרשימה, להעביר אותם כוויו באג
+
         }
+     
     }
 }

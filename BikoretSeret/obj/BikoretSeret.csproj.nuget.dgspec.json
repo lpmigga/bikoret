@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bt-user\\source\\repos\\bikoret\\BikoretSeret\\BikoretSeret.csproj": {}
+    "C:\\Users\\bt-user\\Desktop\\פרויקט\\bikoret\\BikoretSeret\\BikoretSeret.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bt-user\\source\\repos\\bikoret\\BikoretSeret\\BikoretSeret.csproj": {
+    "C:\\Users\\bt-user\\Desktop\\פרויקט\\bikoret\\BikoretSeret\\BikoretSeret.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bt-user\\source\\repos\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
+        "projectUniqueName": "C:\\Users\\bt-user\\Desktop\\פרויקט\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
         "projectName": "BikoretSeret",
-        "projectPath": "C:\\Users\\bt-user\\source\\repos\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
+        "projectPath": "C:\\Users\\bt-user\\Desktop\\פרויקט\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
         "packagesPath": "C:\\Users\\bt-user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bt-user\\source\\repos\\bikoret\\BikoretSeret\\obj\\",
+        "outputPath": "C:\\Users\\bt-user\\Desktop\\פרויקט\\bikoret\\BikoretSeret\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bt-user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,6 +65,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.25, 3.1.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -73,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     }

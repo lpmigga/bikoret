@@ -1,1 +1,32 @@
 ﻿
+
+<table style="table
+{ width: 100%; border-collapse: collapse; }
+
+ { border: 1px solid black; padding: 8px; text-align: left; }
+
+ { background-color: lightgray; } 
+">
+    
+<tbody>
+    @foreach (var movie in ViewBag.listOfMovies)
+    {
+    
+
+
+        <tr style="font-weight: bold;">
+            <td>name</td>
+            <td>category</td>
+            <td>summery</td>
+        </tr>
+
+        <tr>
+            
+            <td>@movie.name</td>
+            <td>@movie.category</td>
+            <td>@movie.summery</td>
+        </tr>
+    }
+</tbody>
+    
+
