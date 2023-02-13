@@ -1,0 +1,10 @@
+﻿<h1>great ! you choose to comment on this movie </h1>
+@model BikoretSeret.Models.Comments
+<form action="/comments/toComment" method="post">
+    <div class="container">
+        <div class="container">
+            <label for="commenting"><b>comment</b></label>
+            <input type="text" placeholder="write your Review" asp-for="comment" required>
+        </div>
+    </div>
+</form>

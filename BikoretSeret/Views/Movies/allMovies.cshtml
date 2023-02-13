@@ -1,34 +1,15 @@
 ﻿
-
-<table style="table
-{ width: 100%; border-collapse: collapse; }
-
- { border: 1px solid black; padding: 8px; text-align: left; }
-
- { background-color: lightgray; } 
-">
-    
-<tbody>
-    @foreach (var movie in ViewBag.listOfMovies)
+@if(ViewBag.movies !=null)
     {
-    
-
-
-        <tr style=  " font-weight: bold " >
-            <td>name</td>
-            <td>category</td>
-            <td>summery</td>
-            <td>comment</td>
-        </tr>
-
-        <tr>
-            
-            <td>@movie.name</td>
-            <td>@movie.category</td>
-            <td>@movie.summery</td>
-            <td><button>comment</button></td>
-        </tr>
+        <div class="row">
+            @for (int i = 0; i < ViewBag.movies.Count; i++)
+            {
+                <div class="movie-card">
+                    <h1>@ViewBag.movies[i].name</h1>
+                      <img src="@ViewBag.ImageDataUrl[i]" />
+                </div>
+            }
+        </div>
     }
-</tbody>
-    
+
 

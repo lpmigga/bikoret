@@ -1,5 +1,5 @@
 ﻿@model BikoretSeret.Models.Movie
-<form action="/Movies/addMovie" method="post">
+<form action="/Movies/addMovie" method="post" enctype="multipart/form-data">
 
 
 
@@ -18,6 +18,9 @@
         <label for="summery"><b>summerys</b></label>
         <input type="text" placeholder="Enter your summery" asp-for="summery" required>
         <br />
+        <input type="file" id="file1"
+               name="file1"
+               multiple="multiple" />
         <input type="submit" value="Submit">
     </div>
     <div>
@@ -35,11 +38,11 @@
     </head>
     <body>
         <!-- content -->
-        <select id="id_select2_example" style="width: 200px;">
+        <!--<select id="id_select2_example" style="width: 200px;">
             <option data-img_src="https://data.world/api/datadotworld-apps/dataset/python/file/raw/logo.png">Python programming</option>
             <option data-img_src="https://sdtimes.com/wp-content/uploads/2018/09/Java-logo-490x301.jpg">Java programming</option>
             <option data-img_src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/783373/1160/772/m1/fpnw/wm0/letter-c-cm-.png?1447712834&s=c2ab07fcddfa8acf10c5a0c40f0578c2">C programming</option>
-        </select>
+        </select>-->
         <!-- /content -->
         <!-- scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
