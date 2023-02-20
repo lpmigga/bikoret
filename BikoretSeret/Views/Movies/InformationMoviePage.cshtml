@@ -1,0 +1,11 @@
+﻿@if(ViewBag.movie!=null)
+{
+<div>
+    <h2 id="mTitle" class="text-right"><strong>@ViewBag.movie.name</strong></h2>
+    <h3 id="mTitle" class="text-right"><strong>@ViewBag.movie.category</strong></h3>
+    <h5 id="mTitle" class="text-right"><strong>@ViewBag.movie.summery</strong></h5>
+  <p>
+      <img style="width:300px; float:right; margin-left:15px;" src="@ViewBag.src"/>
+  </p>
+</div>
+}

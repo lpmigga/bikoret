@@ -21,7 +21,7 @@ namespace BikoretSeret.Controllers
             {
                 using (var db = new Models.DbContect())
                 {
-                    List<Movie> movies = db.movies.Where(n => n.category.Equals(movie.category)&& n.name.Equals(movie.name)).ToList();
+                    List<Movie> movies = db.movies.Where(n => n.category.Equals(movie.category) && n.name.Equals(movie.name)).ToList();
                     if (movies.Count == 0)
                     {
                         foreach (var file in Request.Form.Files)
@@ -83,6 +83,22 @@ namespace BikoretSeret.Controllers
             ViewBag.movies = movies;
             return View();
         }
-
+        [Route("Movies/moviePage/{ID}")]
+   public IActionResult moviePage(int ID)
+        {
+            if(ModelState.IsValid)
+            {
+                using (var db = new Models.DbContect())
+                {
+                    List<Movie> movies = db.movies.Where(M => M.ID == (ID)).ToList();
+                      if(movies.Count>0)
+                        {
+                            ViewBag.movie = movies[0];
+                        }
+                }
+            }
+            return View("/Views/Movies/InformationMoviePage.cshtml");
+        }
     }
+   
 }
