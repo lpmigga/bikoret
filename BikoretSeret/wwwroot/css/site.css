@@ -95,3 +95,23 @@ th, td {
 th {
     background-color: lightgray;
 }
+.hero {
+    background-image: url('../images/21.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 350px  ;
+   
+}
+.policy{
+    text-align :left;
+}
+.hero_bar {
+    background-image: url(/images/500.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 350px;
+} 
