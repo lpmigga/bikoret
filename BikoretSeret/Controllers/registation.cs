@@ -49,6 +49,7 @@ namespace BikoretSeret.Controllers
                     if (users.Count==1)
                     {
                         TempData["message"] = user.UserName + "has been successfully loged in";
+                        TempData["name"] = user.UserName.ToString();
                         
                     }
                     else
