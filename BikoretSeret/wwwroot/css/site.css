@@ -101,14 +101,13 @@ th {
     background-position: center;
     text-align: center;
     color: #fff;
-    padding: 350px  ;
-   
+    padding: 350px  ; 
 }
 .policy{
     text-align :left;
 }
 .hero_bar {
-    background-image: url(/images/500.jpg);
+    background-image: url(../images/500.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;

@@ -60,6 +60,11 @@ namespace BikoretSeret.Controllers
             }
             return View("SignIn");
         }
+        public IActionResult logOut()
+        {
+            TempData.Clear();
+            return View("/Views/Home/Index.cshtml");
+        }
 
     }
 }
