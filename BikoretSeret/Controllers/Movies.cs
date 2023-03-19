@@ -72,6 +72,7 @@ namespace BikoretSeret.Controllers
             using (var db = new Models.DbContect())
             {
                 movies = db.movies.ToList();
+                
             }
             foreach (Movie movie in movies)
             {
@@ -99,6 +100,16 @@ namespace BikoretSeret.Controllers
             }
             return View("/Views/Movies/InformationMoviePage.cshtml");
         }
+        public IActionResult myMovie()
+        {
+            if(ModelState.IsValid)
+                using (var db = new Models.DbContect())
+                {
+                    List<Movie>movies=db.movies.Where(M=>M.creatorName.Equals())
+                }
+            return View("/views/movies/myMovies.cshtml");
+        }
     }
+    
    
 }

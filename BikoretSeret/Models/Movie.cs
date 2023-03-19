@@ -13,6 +13,7 @@ namespace BikoretSeret.Models
         public string category { get; set; }
         public string summery { get; set; }
         public byte[] ImageData { get; set; }
+        public string creatorName { get; set; }
 
     }
 }

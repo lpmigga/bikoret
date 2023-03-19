@@ -113,4 +113,7 @@ th {
     text-align: center;
     color: #fff;
     padding: 350px;
-} 
+}
+.container {
+    padding: 16px;
+}
