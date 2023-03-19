@@ -17,6 +17,9 @@ namespace BikoretSeret.Controllers
         [HttpPost]
         public IActionResult addMovie(Movie movie)
         {
+            string userName = TempData["name"].ToString();
+            TempData["name"] = userName;
+            movie.creatorName = userName;
             if (ModelState.IsValid)
             {
                 using (var db = new Models.DbContect())
@@ -102,11 +105,24 @@ namespace BikoretSeret.Controllers
         }
         public IActionResult myMovie()
         {
+            string userName = TempData["name"].ToString();
+            TempData["name"] = userName;
             if(ModelState.IsValid)
+            {
                 using (var db = new Models.DbContect())
                 {
-                    List<Movie>movies=db.movies.Where(M=>M.creatorName.Equals())
+                    List<Movie> movies = db.movies.Where(M => M.creatorName.Equals(userName)).ToList();
+                    List<string> ImageDataUrls = new List<string>();
+                    foreach (Movie movie in movies)
+                    {
+                        string imageBase64Data = Convert.ToBase64String(movie.ImageData);
+                        string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                        ImageDataUrls.Add(imageDataUrl);
+                    }
+                    ViewBag.ImageDataUrl = ImageDataUrls;
+                    ViewBag.movies = movies;
                 }
+            }
             return View("/views/movies/myMovies.cshtml");
         }
     }
