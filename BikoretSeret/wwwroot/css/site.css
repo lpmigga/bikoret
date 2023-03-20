@@ -117,3 +117,8 @@ th {
 .container {
     padding: 16px;
 }
+.imgcontainer {
+    height: 100px;
+    width: 100px;
+    text-align:center;
+}
