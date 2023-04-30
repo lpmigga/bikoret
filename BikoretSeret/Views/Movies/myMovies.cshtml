@@ -1,4 +1,12 @@
-﻿
+﻿@model BikoretSeret.Models.Movie
+<form action="/Movies/Filter" method="post">
+    <select asp-for="category">
+        <option value="action"> Action</option>
+        <option value="comedy"> Comedy</option>
+        <option value="romanti"> Romanti</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
 @if (ViewBag.movies != null)
 {
     <div class="row">

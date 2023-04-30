@@ -125,6 +125,26 @@ namespace BikoretSeret.Controllers
             }
             return View("/views/movies/myMovies.cshtml");
         }
+
+        public IActionResult filter(Movie movie)
+        {
+            List<Movie> movies;
+            List<string> ImageDataUrls = new List<string>();
+            using (var db = new Models.DbContect())
+            {
+                movies = db.movies.Where(m => m.category.Equals(movie.category)).ToList();
+
+            }
+            foreach (Movie mov in movies)
+            {
+                string imageBase64Data = Convert.ToBase64String(mov.ImageData);
+                string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ImageDataUrls.Add(imageDataUrl);
+            }
+            ViewBag.ImageDataUrl = ImageDataUrls;
+            ViewBag.movies = movies;
+            return View("/Views/Movies/AllMovies.cshtml");
+        }
     }
     
    
