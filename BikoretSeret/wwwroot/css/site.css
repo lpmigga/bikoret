@@ -134,10 +134,30 @@ th {
     font-size: 24px;
     font-weight: normal;
     color: #666;
-    text-align:left;
-    
-
-
-
-    
+    text-align: left;
 }
+.allMovieCss {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    padding-top: 1.1686747%;
+    padding-right:50%;
+}
+.title-poster {
+    position: page;
+    display: flex;
+    overflow: hidden;
+    padding-top: 1%;
+    width:200%;
+    transition: opacity .1s ease;
+    border-radius: 5px;
+    height: 100%;
+    color:white;
+}
+
+
+
+    
+
+

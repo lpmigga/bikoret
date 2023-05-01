@@ -75,7 +75,7 @@ namespace BikoretSeret.Controllers
             using (var db = new Models.DbContect())
             {
                 movies = db.movies.ToList();
-                
+
             }
             foreach (Movie movie in movies)
             {
@@ -88,17 +88,17 @@ namespace BikoretSeret.Controllers
             return View();
         }
         [Route("Movies/moviePage/{ID}")]
-   public IActionResult moviePage(int ID)
+        public IActionResult moviePage(int ID)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (var db = new Models.DbContect())
                 {
                     List<Movie> movies = db.movies.Where(M => M.ID == (ID)).ToList();
-                      if(movies.Count>0)
-                        {
-                            ViewBag.movie = movies[0];
-                        }
+                    if (movies.Count > 0)
+                    {
+                        ViewBag.movie = movies[0];
+                    }
                 }
             }
             return View("/Views/Movies/InformationMoviePage.cshtml");
@@ -107,7 +107,7 @@ namespace BikoretSeret.Controllers
         {
             string userName = TempData["name"].ToString();
             TempData["name"] = userName;
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (var db = new Models.DbContect())
                 {
@@ -145,7 +145,29 @@ namespace BikoretSeret.Controllers
             ViewBag.movies = movies;
             return View("/Views/Movies/AllMovies.cshtml");
         }
+        public IActionResult myFilter(Movie movie)
+        {
+            string userName = TempData["name"].ToString();
+            TempData["name"] = userName;
+            List<Movie> movies;
+            List<string> ImageDataUrls = new List<string>();
+            using (var db = new Models.DbContect())
+            {
+                movies = db.movies.Where(m => m.creatorName.Equals(userName) && m.category.Equals(movie.category)).ToList();
+
+            }
+            foreach (Movie mov in movies)
+            {
+                string imageBase64Data = Convert.ToBase64String(mov.ImageData);
+                string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ImageDataUrls.Add(imageDataUrl);
+            }
+            ViewBag.ImageDataUrl = ImageDataUrls;
+            ViewBag.movies = movies;
+            return View("/Views/Movies/AllMovies.cshtml");
+        }
     }
+}
     
    
-}
+
