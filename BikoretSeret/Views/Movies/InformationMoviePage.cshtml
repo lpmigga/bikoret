@@ -1,15 +1,16 @@
 ﻿@if(ViewBag.movie!=null)
 {
+    string imageBase64Data = Convert.ToBase64String(ViewBag.movie.ImageData);
+    string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
 <div>
     <h1 id="mTitle" class="bigTitle"><strong>@ViewBag.movie.name</strong></h1>
     <br />
     <br />
     <h3 id="mTitle" class="subT"> what is the kind of the movie ? <strong>@ViewBag.movie.category</strong></h3>
-    <img src="@ViewBag.movie.ImageData" />
     <h5 id="mTitle" class="subT"><strong>@ViewBag.movie.summery</strong></h5>
 
     <p>
-        <img style="width:300px; float:right; margin-left:15px;" src="@ViewBag.src" />
+        <img style="width:300px; float:right; margin-left:15px;" src="@imageDataUrl" />
     </p>
 </div>
 }
