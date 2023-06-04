@@ -48,7 +48,16 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="myMovie">your movies</a>
                             </li>
+                            string userName = TempData["name"].ToString();
+                            TempData["name"] = userName;
+                            if (userName.Equals("manager"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="delete">delete movie</a>
+                                </li>
+                            }
                         }
+
                     </ul>
                 </div>
             </div>

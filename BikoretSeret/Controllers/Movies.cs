@@ -166,6 +166,13 @@ namespace BikoretSeret.Controllers
             ViewBag.movies = movies;
             return View("/Views/Movies/AllMovies.cshtml");
         }
+        [Route("/Movies/delete/{name}")]
+        public IActionResult delete(string name)
+        {
+            
+
+            return View("/Views/Movies/AllMovies.cshtml");
+        }
     }
 }
     
