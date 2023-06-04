@@ -90,6 +90,9 @@ namespace BikoretSeret.Controllers
         [Route("Movies/moviePage/{ID}")]
         public IActionResult moviePage(int ID)
         {
+            string userName = TempData["name"].ToString();
+            TempData["name"] = userName;
+            bool found = false;
             if (ModelState.IsValid)
             {
                 using (var db = new Models.DbContect())
@@ -98,9 +101,11 @@ namespace BikoretSeret.Controllers
                     if (movies.Count > 0)
                     {
                         ViewBag.movie = movies[0];
+                        found = movies[0].creatorName.Equals(userName);
                     }
                 }
             }
+            ViewBag.found = found;
             return View("/Views/Movies/InformationMoviePage.cshtml");
         }
         public IActionResult myMovie()
@@ -154,6 +159,7 @@ namespace BikoretSeret.Controllers
             using (var db = new Models.DbContect())
             {
                 movies = db.movies.Where(m => m.creatorName.Equals(userName) && m.category.Equals(movie.category)).ToList();
+                // db.movies.Remove();
 
             }
             foreach (Movie mov in movies)
@@ -169,11 +175,39 @@ namespace BikoretSeret.Controllers
         [Route("/Movies/delete/{name}")]
         public IActionResult delete(string name)
         {
-            
+
+            using (var db = new Models.DbContect())
+            {
+                List<Movie> movie = db.movies.Where(m => m.name.Equals(name)).ToList();
+                db.movies.Remove(movie[0]);
+                db.SaveChanges();
+                ViewBag.message = "this movie has been deleate from this site";
+            }
+            List<Movie> movies;
+            List<string> ImageDataUrls = new List<string>();
+            using (var db = new Models.DbContect())
+            {
+                movies = db.movies.ToList();
+
+            }
+            foreach (Movie movie in movies)
+            {
+                string imageBase64Data = Convert.ToBase64String(movie.ImageData);
+                string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ImageDataUrls.Add(imageDataUrl);
+            }
+            ViewBag.ImageDataUrl = ImageDataUrls;
+            ViewBag.movies = movies;
+
+            // למצוא את הסרט מהדטא בייס
+            // למחוק אותו מהדטאנ בייס
+            // להחזיר הודעה מתאימה
 
             return View("/Views/Movies/AllMovies.cshtml");
         }
+
     }
+    
 }
     
    

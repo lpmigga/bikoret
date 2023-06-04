@@ -1,7 +1,11 @@
 ﻿@if (ViewBag.movie != null)
 {
+    string userName = TempData["name"].ToString();
+    TempData["name"] = userName;
+    if (userName.Equals("manager") || ViewBag.found == true)
+    {
     <a asp-controller="Movies" asp-action="delete" asp-route-name="@ViewBag.movie.name">delete</a>
-
+    }
     @*<div id="id01" class="modal">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
         <form class="modal-content" action="/Movies/delete" method="post">
