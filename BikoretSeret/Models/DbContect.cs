@@ -12,6 +12,7 @@ namespace BikoretSeret.Models
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite(@"Data source=Demo.db");
         public DbSet<Movie> movies { get; set; }
+        public DbSet<Comments> comments { get; set; }
 
 
     }

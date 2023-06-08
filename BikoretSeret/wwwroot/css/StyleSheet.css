@@ -8,11 +8,11 @@
     background-image: url("/images/19.jpg");
     background-attachment:fixed;
 }
-.movie-card {
+#movie-card {
     width: 170px;
     float:left;
     padding:5px;
-    height:5px
+    height:200px
 /*    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 20px;
     text-align: center;*/

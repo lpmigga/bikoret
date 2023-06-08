@@ -11,12 +11,13 @@
 <div class="row">
     @for (int i = 0; i < ViewBag.movies.Count; i++)
     {
-        <div class="img_1">
-            <a class="nav-link text-dark" asp-area="" asp-controller="movies" asp-action="moviePage" asp-route-id="@ViewBag.movies[i].ID">
-                <img id="movie-card" src="@ViewBag.ImageDataUrl[i]" />
-            </a>
-            <h1>@ViewBag.movies[i].name</h1>
-        </div>
+    <div class="img_1">
+        <h1>@ViewBag.movies[i].name</h1>
+        <a class="nav-link text-dark" asp-area="" asp-controller="movies" asp-action="moviePage" asp-route-id="@ViewBag.movies[i].ID">
+            <img id="movie-card" src="@ViewBag.ImageDataUrl[i]" />
+        </a>
+
+    </div>
     }
 </div>
 @if (@ViewBag.meesage != null)

@@ -1,10 +1,11 @@
-﻿<h1>great ! you choose to comment on this movie </h1>
-@model BikoretSeret.Models.Comments
+﻿@model BikoretSeret.Models.Comments
+<h1>great ! you choose to comment on this movie </h1>
 <form action="/comments/toComment" method="post">
     <div class="container">
         <div class="container">
-            <label for="commenting"><b>comment</b></label>
-            <input type="text" placeholder="write your Review" asp-for="comment" required>
+            <textarea id="commentText" rows="4" cols="50" asp-for="comment">write your Review</textarea>
+            <input hidden value="@ViewBag.id" asp-for="id" />
+            <input type="submit" value="Submit">
         </div>
     </div>
 </form>
