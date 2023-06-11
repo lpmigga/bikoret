@@ -90,18 +90,23 @@ namespace BikoretSeret.Controllers
         [Route("Movies/moviePage/{ID}")]
         public IActionResult moviePage(int ID)
         {
-            string userName = TempData["name"].ToString();
-            TempData["name"] = userName;
             bool found = false;
             if (ModelState.IsValid)
             {
                 using (var db = new Models.DbContect())
                 {
                     List<Movie> movies = db.movies.Where(M => M.ID == (ID)).ToList();
+                    List<Comments> comments = db.comments.Where(c => c.movieId.Equals(ID)).ToList();
+                    ViewBag.comments = comments;
                     if (movies.Count > 0)
                     {
                         ViewBag.movie = movies[0];
-                        found = movies[0].creatorName.Equals(userName);
+                        if (TempData.ContainsKey("name"))
+                        {
+                            string userName = TempData["name"].ToString();
+                            TempData["name"] = userName;
+                            found = movies[0].creatorName.Equals(userName);
+                        }
                     }
                 }
             }

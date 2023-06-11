@@ -27,6 +27,21 @@ namespace BikoretSeret.Controllers
                 }
                 db.SaveChanges();
             }
+            List<Movie> movies;
+            List<string> ImageDataUrls = new List<string>();
+            using (var db = new Models.DbContect())
+            {
+                movies = db.movies.ToList();
+
+            }
+            foreach (Movie movie in movies)
+            {
+                string imageBase64Data = Convert.ToBase64String(movie.ImageData);
+                string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ImageDataUrls.Add(imageDataUrl);
+            }
+            ViewBag.ImageDataUrl = ImageDataUrls;
+            ViewBag.movies = movies;
             return View("/Views/Movies/allMovies.cshtml");
         }
         [Route("comments/commentButton/{ID}")]
@@ -35,5 +50,19 @@ namespace BikoretSeret.Controllers
             ViewBag.id = ID;
             return View("toComment");
         }
+        [Route("/comments/DeleteComment/{id}")]
+        public IActionResult DeleteComment(int id)
+        {
+
+            using (var db = new Models.DbContect())
+            {
+                db.comments.Remove(db.comments.Find(id));
+                db.SaveChanges();
+                //ViewBag.message = "this movie has been deleate from this site";
+            }
+
+            return View("/Views/Home/Index.cshtml");
+        }
     }
+
 }

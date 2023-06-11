@@ -9,10 +9,13 @@
     background-attachment:fixed;
 }
 #movie-card {
-    width: 170px;
-    float:left;
-    padding:5px;
-    height:200px
+    width: 200px;
+    float: left;
+    padding: 20px;
+    height: 200px
+    
+}
+    
 /*    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 20px;
     text-align: center;*/
@@ -27,4 +30,4 @@
     text-align:right;
     width:1px;
     height:1px;*/
-}
+
