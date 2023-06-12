@@ -17,8 +17,8 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="movies" asp-action="moviePage" asp-route-id="@ViewBag.movies[i].ID"></a>
                 </div>
 
-                <h1>@ViewBag.movies[i].name</h1>
-                <img src="@ViewBag.ImageDataUrl[i]" />
+                <h6 style="text-align:center">@ViewBag.movies[i].name</h6>
+                <img id="movie-card" src="@ViewBag.ImageDataUrl[i]" />
             </div>
         }
     </div>

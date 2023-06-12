@@ -36,8 +36,9 @@
         <p>
             <img style="width:300px; float:right; margin-left:15px;" src="@imageDataUrl" />
         </p>
-        <h3 id="mTitle" class="subT"> what is the kind of the movie ? <strong>@ViewBag.movie.category</strong></h3>
-        <h5 id="mTitle" class="subT"><strong>@ViewBag.movie.summery</strong></h5>
+        <h3 id="mTitle" class="subT"> Category : <strong>@ViewBag.movie.category</strong></h3>
+        <br />
+        <h5 dir="auto" id="mTitle" class="subT"><strong>@ViewBag.movie.summery</strong></h5>
         @if (TempData.ContainsKey("name"))
         {
             <a class="alert-info border-primary" onclick="commentButton" asp-controller="comments" asp-action="commentButton" asp-route-id="@ViewBag.movie.ID">you want to add comment ? press here</a>
@@ -47,11 +48,14 @@
     for (int i = 0; i < ViewBag.comments.Count; i++)
     {
         <h5>@ViewBag.comments[i].userName:@ViewBag.comments[i].comment</h5>
-        string userName = TempData["name"].ToString();
-        TempData["name"] = userName;
-        @if (ViewBag.comments[i].userName.Equals(userName) || userName.Equals("manager"))
+        @if (TempData.ContainsKey("name"))
         {
-            <a class="alert-info border-primary" asp-controller="comments" asp-action="DeleteComment" asp-route-id="@ViewBag.comments[i].id">you want to add comment ? press here</a>
+            string userName = TempData["name"].ToString();
+            TempData["name"] = userName;
+            @if (ViewBag.comments[i].userName.Equals(userName) || userName.Equals("manager"))
+            {
+                <a class="alert-info border-primary" asp-controller="comments" asp-action="DeleteComment" asp-route-id="@ViewBag.comments[i].id">you want to add comment ? press here</a>
+            }
         }
     }
 

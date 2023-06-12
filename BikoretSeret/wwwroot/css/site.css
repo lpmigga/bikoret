@@ -59,7 +59,7 @@ html {
 }
 
 .footer {
-  position: absolute;
+  position: inherit;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
@@ -152,6 +152,9 @@ th {
     color:white;
 }
 
+#footer {
+    position:inherit ;
+}
 
 
 
