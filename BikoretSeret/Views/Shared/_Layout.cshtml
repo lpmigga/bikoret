@@ -12,31 +12,38 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BikoretSeret</a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action=""><img style="height:100px;" src="~/images/Saved Pictures/logo.jpg" /></a>
+                        </li>
                         @if (TempData.ContainsKey("name"))
                         {
                             string userName = TempData["name"].ToString();
                             TempData["name"] = userName;
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller= asp-action="">@userName</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">@userName</a>
                             </li>
 
                         }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="registation" asp-action="Index">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="registation" asp-action="SignIn">SignIn</a>
-                        </li>
+                        @if (TempData.ContainsKey("name").Equals(false))
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="registation" asp-action="Index">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="registation" asp-action="SignIn">SignIn</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="allMovies">The-Movies</a>
                         </li>

@@ -1,13 +1,16 @@
 ﻿@model BikoretSeret.Models.Movie
 <form action="/Movies/addMovie" method="post" enctype="multipart/form-data">
 
+    <h1 class="addTitle" color:darkcyan"><em> add your movie</em></h1>
 
 
     <div class="container">
-        <label for="mName"><b>movieName</b></label>
+        <label for="mName"><b>Enter the name of the movie that you want to add</b></label>
         <input type="text" placeholder="Enter movie name" asp-for="name" required>
         <br />
-        <label for="categor"><b>movieCategory</b></label><br />
+        <br />
+        <br />
+        <label for="categor"><b>Choose the category of your movie ( pick 1)</b></label><br />
 
         <input type="radio" value="action" asp-for="category"><label>Action</label>
         <br />
@@ -15,8 +18,10 @@
         <br>
         <input type="radio" value="romanti" asp-for="category"><label>romanti</label>
         <br />
-        <label for="summery"><b>summerys</b></label>
-        <input type="text" placeholder="Enter your summery" asp-for="summery" required>
+        <label for="summery"><b>Enter the summery of this movie</b></label>
+        <br />
+        <textarea id="commentText" rows="4" cols="50" asp-for="summery"> Enter the summery of this movie</textarea>
+        <br />
         <br />
         <input type="file" id="file1"
                name="file1"
@@ -30,7 +35,7 @@
             <h1>@name</h1>
         }
     </div>
-    
+
     <html>
     <head>
         <title> Image drop down selection </title>
@@ -48,21 +53,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
         <script type="text/javascript">
-    function custom_template(obj){
-            var data = $(obj.element).data();
-            var text = $(obj.element).text();
-            if(data && data['img_src']){
-                img_src = data['img_src'];
-                template = $("<div><img src=\"" + img_src + "\" style=\"width:100%;height:150px;\"/><p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
-                return template;
+            function custom_template(obj) {
+                var data = $(obj.element).data();
+                var text = $(obj.element).text();
+                if (data && data['img_src']) {
+                    img_src = data['img_src'];
+                    template = $("<div><img src=\"" + img_src + "\" style=\"width:100%;height:150px;\"/><p style=\"font-weight: 700;font-size:14pt;text-align:center;\">" + text + "</p></div>");
+                    return template;
+                }
             }
-        }
-    var options = {
-        'templateSelection': custom_template,
-        'templateResult': custom_template,
-    }
-    $('#id_select2_example').select2(options);
-    $('.select2-container--default .select2-selection--single').css({'height': '220px'});
+            var options = {
+                'templateSelection': custom_template,
+                'templateResult': custom_template,
+            }
+            $('#id_select2_example').select2(options);
+            $('.select2-container--default .select2-selection--single').css({ 'height': '220px' });
 
         </script>
     </body>
