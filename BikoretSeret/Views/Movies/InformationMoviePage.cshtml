@@ -54,7 +54,7 @@
             TempData["name"] = userName;
             @if (ViewBag.comments[i].userName.Equals(userName) || userName.Equals("manager"))
             {
-                <a class="alert-info border-primary" asp-controller="comments" asp-action="DeleteComment" asp-route-id="@ViewBag.comments[i].id">you want to add comment ? press here</a>
+                <a class="alert-info border-primary" asp-controller="comments" asp-action="DeleteComment" asp-route-id="@ViewBag.comments[i].id">To delete this comment </a>
             }
         }
     }

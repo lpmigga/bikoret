@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+ejXL4QbuJv1iXE+asdno1TecbuZljYhX+L3BkzeflUX/LvgaAtUGaXHpZ1zzN+K3pqseLYRiXktU10/Zv7NbA==",
+  "dgSpecHash": "/qq1keTTElx89D2Npn8A1uflBZUpKfLbVqwBuCj5++EC24xKa1jfzMlAy7GmaWDJ4pYMomTXNnursDOgEv+JsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bt-user\\Documents\\51414189151\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
+  "projectFilePath": "C:\\Users\\bt-user\\Documents\\656645898\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bt-user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bt-user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -35,8 +35,7 @@
     "C:\\Users\\bt-user\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "C:\\Users\\bt-user\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\bt-user\\.nuget\\packages\\system.text.encodings.web\\5.0.0\\system.text.encodings.web.5.0.0.nupkg.sha512",
-    "C:\\Users\\bt-user\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\bt-user\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+    "C:\\Users\\bt-user\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
