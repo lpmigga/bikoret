@@ -60,8 +60,22 @@ namespace BikoretSeret.Controllers
                 db.SaveChanges();
                 //ViewBag.message = "this movie has been deleate from this site";
             }
+            List<Movie> movies;
+            List<string> ImageDataUrls = new List<string>();
+            using (var db = new Models.DbContect())
+            {
+                movies = db.movies.ToList();
 
-            return View("/Views/Home/Index.cshtml");
+            }
+            foreach (Movie movie in movies)
+            {
+                string imageBase64Data = Convert.ToBase64String(movie.ImageData);
+                string imageDataUrl = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ImageDataUrls.Add(imageDataUrl);
+            }
+            ViewBag.ImageDataUrl = ImageDataUrls;
+            ViewBag.movies = movies;
+            return View("/Views/Movies/allMovies.cshtml");
         }
     }
 

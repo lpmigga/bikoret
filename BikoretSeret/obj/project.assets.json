@@ -1186,11 +1186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bt-user\\Documents\\656645898\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
+      "projectUniqueName": "C:\\Users\\bt-user\\Documents\\jvjeifjqwi\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
       "projectName": "BikoretSeret",
-      "projectPath": "C:\\Users\\bt-user\\Documents\\656645898\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
+      "projectPath": "C:\\Users\\bt-user\\Documents\\jvjeifjqwi\\bikoret\\BikoretSeret\\BikoretSeret.csproj",
       "packagesPath": "C:\\Users\\bt-user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bt-user\\Documents\\656645898\\bikoret\\BikoretSeret\\obj\\",
+      "outputPath": "C:\\Users\\bt-user\\Documents\\jvjeifjqwi\\bikoret\\BikoretSeret\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bt-user\\AppData\\Roaming\\NuGet\\NuGet.Config",

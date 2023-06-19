@@ -48,13 +48,13 @@ namespace BikoretSeret.Controllers
                     List<TbUser> users = db.Users.Where(n => n.UserName.Equals(user.UserName)&& n.Password.Equals(user.Password)).ToList();
                     if (users.Count==1)
                     {
-                        TempData["message"] = user.UserName + "has been successfully loged in";
+                        TempData["message"] = user.UserName +   "has been successfully loged in";
                         TempData["name"] = user.UserName.ToString();
                         
                     }
                     else
                     {
-                        TempData["message"] = user.UserName + "fail , try again please";
+                        TempData["message"] = user.UserName +    "fail , try again please";
                     }
                 }
             }
